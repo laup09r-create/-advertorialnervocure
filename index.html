@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A descoberta que está chamando atenção de milhares de brasileiros com dores nervosas | Saúde em Foco</title>
+<title>O que pode estar por trás do formigamento e da dormência nos pés e mãos? | Saúde em Foco</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
     --card: #FFFFFF;
     --border: #E1E7E2;
     --highlight-bg: #EAF3EF;
+    --gray-box: #F1F2F0;
     --radius: 14px;
     --serif: 'Source Serif 4', Georgia, serif;
     --sans: 'Work Sans', -apple-system, sans-serif;
@@ -30,28 +31,21 @@
     font-family:var(--sans);
     color:var(--ink);
     background:var(--bg);
-    line-height:1.6;
+    line-height:1.65;
   }
   img,svg{max-width:100%;display:block;}
   a{color:inherit;}
   .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
   .wrap-wide{max-width:980px;margin:0 auto;padding:0 20px;}
+  b, strong{color:var(--teal-deep);}
 
-  /* Sponsored banner */
   .sponsor-banner{
-    background:var(--teal-deep);
-    color:#EAF3EF;
-    text-align:center;
-    font-size:13px;
-    letter-spacing:.04em;
-    padding:7px 12px;
-    font-weight:500;
+    background:var(--teal-deep);color:#EAF3EF;text-align:center;
+    font-size:13px;letter-spacing:.04em;padding:7px 12px;font-weight:500;
   }
 
-  /* Header */
   header.site{
-    background:var(--card);
-    border-bottom:1px solid var(--border);
+    background:var(--card);border-bottom:1px solid var(--border);
     position:sticky; top:0; z-index:20;
   }
   .header-inner{
@@ -60,18 +54,11 @@
     flex-wrap:wrap; gap:12px;
   }
   .logo{
-    font-family:var(--serif);
-    font-weight:700;
-    font-size:24px;
-    color:var(--teal-deep);
-    display:flex;align-items:center;gap:8px;
-    letter-spacing:-.01em;
+    font-family:var(--serif);font-weight:700;font-size:24px;color:var(--teal-deep);
+    display:flex;align-items:center;gap:8px;letter-spacing:-.01em;
   }
   .logo .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);display:inline-block;}
-  nav.categories{
-    display:flex;gap:22px;font-size:14px;font-weight:500;color:var(--ink-soft);
-    flex-wrap:wrap;
-  }
+  nav.categories{display:flex;gap:22px;font-size:14px;font-weight:500;color:var(--ink-soft);flex-wrap:wrap;}
   nav.categories a{text-decoration:none;padding-bottom:14px;border-bottom:2px solid transparent;}
   nav.categories a:hover{color:var(--teal-deep);border-color:var(--amber);}
   .search-icon{color:var(--ink-soft);flex-shrink:0;}
@@ -83,88 +70,125 @@
   }
   .meta-row span{display:flex;align-items:center;gap:5px;}
 
+  .progress-bar{
+    position:fixed;top:0;left:0;height:3px;background:var(--amber);
+    z-index:50;width:0%;transition:width .1s ease;
+  }
+  .author-avatar{
+    width:22px;height:22px;border-radius:50%;
+    background:linear-gradient(135deg,#2E8C74,#123F34);
+    display:inline-flex;align-items:center;justify-content:center;
+    color:#EAF3EF;font-size:10px;font-weight:700;flex-shrink:0;
+  }
+
   /* Article head */
   .article-head{padding:36px 0 8px;}
   .eyebrow{
     color:var(--amber-deep);font-weight:700;font-size:13px;
     letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;
+    display:flex;align-items:center;gap:7px;
   }
   h1.headline{
     font-family:var(--serif);
-    font-size:clamp(28px,4.4vw,42px);
-    line-height:1.18;
+    font-size:clamp(30px,5.4vw,48px);
+    line-height:1.14;
     font-weight:700;
-    margin:0 0 14px;
+    margin:0 0 16px;
     color:var(--ink);
+    letter-spacing:-.01em;
   }
   p.subhead{
-    font-size:18px;color:var(--ink-soft);font-weight:400;margin:0 0 24px;
-    max-width:640px;
+    font-size:18px;color:var(--ink-soft);font-weight:400;margin:0 0 26px;
+    max-width:660px;
   }
 
   /* Hero image */
-  .hero-figure{margin:0 0 34px;}
+  .hero-figure{margin:0 0 14px;}
   .hero-visual{
-    border-radius: 18px;
+    border-radius: 20px;
     overflow:hidden;
     border:1px solid var(--border);
     background: linear-gradient(135deg,#123F34 0%, #1E6F5C 55%, #2E8C74 100%);
     aspect-ratio: 16/9;
+    box-shadow: 0 18px 40px -18px rgba(18,63,52,0.35), 0 4px 14px rgba(18,63,52,0.12);
   }
-  figcaption{
-    font-size:12.5px;color:var(--ink-soft);margin-top:8px;text-align:center;
-  }
+  figcaption{font-size:12.5px;color:var(--ink-soft);margin-top:10px;text-align:center;}
+
+  .hero-cta{text-align:center;margin:22px 0 8px;}
+  .hero-cta .cta-btn{font-size:16px;padding:16px 34px;}
 
   /* Body text */
-  .article-body p{
-    font-size:17px;margin:0 0 16px;color:#2A362F;
+  .article-body p{font-size:17px;margin:0 0 16px;color:#2A362F;}
+  .article-body p.lead{font-size:18.5px;}
+
+  /* Divider */
+  .divider{
+    border:none;border-top:1px solid var(--border);
+    margin:38px 0;
   }
-  .article-body p.lead{font-size:18px;}
 
   /* Highlight box */
   .highlight-box{
-    background:var(--highlight-bg);
-    border-left:4px solid var(--teal);
-    border-radius:10px;
-    padding:22px 24px;
-    margin:30px 0;
+    background:var(--highlight-bg);border-left:4px solid var(--teal);
+    border-radius:10px;padding:22px 24px;margin:30px 0 18px;
   }
-  .highlight-box h3{
-    font-family:var(--serif);
-    font-size:19px;margin:0 0 12px;color:var(--teal-deep);
-  }
+  .highlight-box h3{font-family:var(--serif);font-size:19px;margin:0 0 12px;color:var(--teal-deep);}
   .highlight-box ul{margin:0;padding-left:20px;}
   .highlight-box li{margin-bottom:9px;font-size:15.5px;color:#233029;}
+  .box-cta{text-align:center;margin:6px 0 10px;}
+  .box-cta .cta-btn{font-size:14px;padding:12px 22px;background:var(--teal);}
+  .box-cta .cta-btn:hover{background:var(--teal-deep);}
+
+  /* Gray info box */
+  .gray-box{
+    background:var(--gray-box);border-radius:12px;padding:18px 20px;
+    margin:18px 0 26px;font-size:14.5px;color:var(--ink-soft);
+    display:flex;gap:12px;align-items:flex-start;
+  }
+  .gray-box svg{flex-shrink:0;color:var(--teal);margin-top:2px;}
+  .gray-box strong{display:block;color:var(--ink);margin-bottom:4px;font-size:15px;}
 
   /* Section with side image */
-  .side-section{
-    display:grid;grid-template-columns:1fr 130px;gap:22px;align-items:start;
-    margin:32px 0;
-  }
-  .side-section .icon-box{
-    width:100%;aspect-ratio:1;border-radius:14px;
-    background:var(--highlight-bg);
-    display:flex;align-items:center;justify-content:center;
-    border:1px solid var(--border);
-  }
   h2.section-title{
     font-family:var(--serif);font-weight:700;
-    font-size:24px;margin:44px 0 14px;color:var(--ink);
+    font-size:clamp(21px,3vw,25px);margin:46px 0 14px;color:var(--ink);
+    display:flex;align-items:center;gap:9px;
+  }
+  h2.section-title svg{color:var(--teal);flex-shrink:0;}
+  .side-section{
+    display:grid;grid-template-columns:1fr 130px;gap:22px;align-items:start;margin:18px 0;
+  }
+  .side-section .icon-box{
+    width:100%;aspect-ratio:1;border-radius:14px;background:var(--highlight-bg);
+    display:flex;align-items:center;justify-content:center;border:1px solid var(--border);
+  }
+
+  /* Comparison illustration */
+  .comparison-figure{margin:20px 0 30px;}
+  .comparison-visual{
+    border-radius:16px;border:1px solid var(--border);background:#fff;padding:18px;
   }
 
   /* Nutrients grid */
-  .nutrient-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0 8px;
-  }
+  .nutrient-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0 8px;}
   .nutrient-card{
     background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-    padding:20px 16px;text-align:center;
+    padding:22px 16px;text-align:center;
   }
-  .nutrient-card .n-icon{
-    width:44px;height:44px;margin:0 auto 12px;color:var(--teal);
-  }
+  .nutrient-card .n-icon{width:44px;height:44px;margin:0 auto 12px;color:var(--teal);}
   .nutrient-card h4{margin:0 0 6px;font-size:15.5px;font-family:var(--serif);}
   .nutrient-card p{margin:0;font-size:13.5px;color:var(--ink-soft);}
+
+  /* Pull quote */
+  .pull-quote{
+    background:var(--gray-box);border-radius:18px;
+    padding:34px 30px;margin:34px 0;text-align:center;
+  }
+  .pull-quote .quote-icon{color:var(--amber);margin:0 auto 10px;}
+  .pull-quote p{
+    font-family:var(--serif);font-style:italic;font-size:23px;color:var(--teal-deep);
+    margin:0;line-height:1.45;
+  }
 
   /* Story block */
   .story-block{
@@ -174,65 +198,51 @@
 
   /* Product section */
   .product-section{
-    background:var(--teal-deep);
-    color:#EAF3EF;
-    border-radius:20px;
-    padding:36px 28px;
-    margin:44px 0;
-    display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:center;
+    background:var(--teal-deep);color:#EAF3EF;border-radius:20px;
+    padding:38px 30px;margin:44px 0 24px;
+    display:grid;grid-template-columns:230px 1fr;gap:30px;align-items:center;
   }
   .product-visual{
-    width:100%;aspect-ratio:1/1;border-radius:14px;
-    background:#EAF3EF;
+    width:100%;aspect-ratio:1/1;border-radius:14px;background:#EAF3EF;
     display:flex;align-items:center;justify-content:center;
-    border:1px solid rgba(255,255,255,.15);
-    overflow:hidden;
-    padding:10px;
+    border:1px solid rgba(255,255,255,.15);overflow:hidden;padding:10px;
   }
-  .product-visual img{
-    width:100%;height:100%;object-fit:contain;
-  }
-  .product-section h3{font-family:var(--serif);font-size:23px;margin:0 0 8px;}
-  .product-section p{font-size:14.5px;color:#CFE3DA;margin:0 0 10px;}
-  .product-section ul{margin:0 0 18px;padding-left:18px;font-size:13.5px;color:#CFE3DA;}
-  .product-section li{margin-bottom:5px;}
+  .product-visual img{width:100%;height:100%;object-fit:contain;}
+  .product-section h3{font-family:var(--serif);font-size:25px;margin:0 0 10px;}
+  .product-section p{font-size:15px;color:#CFE3DA;margin:0 0 18px;}
   .cta-btn{
-    display:inline-block;
-    background:var(--amber);
-    color:#fff;
-    font-weight:700;
-    font-size:14.5px;
-    padding:14px 26px;
-    border-radius:100px;
-    text-decoration:none;
-    letter-spacing:.01em;
-    transition:transform .15s ease, background .15s ease;
+    display:inline-block;background:var(--amber);color:#fff;font-weight:700;
+    font-size:14.5px;padding:14px 26px;border-radius:100px;text-decoration:none;
+    letter-spacing:.01em;transition:transform .15s ease, background .15s ease;
   }
   .cta-btn:hover{background:var(--amber-deep);transform:translateY(-1px);}
 
-  /* Benefits grid */
-  .benefit-grid{
-    display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:22px 0 6px;
+  /* Checkmark grid (under product) */
+  .check-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:0 0 40px;
   }
+  .check-card{
+    background:var(--card);border:1px solid var(--border);border-radius:12px;
+    padding:16px 18px;font-size:14px;color:#233029;
+    display:flex;gap:10px;align-items:flex-start;
+  }
+  .check-card .tick{color:var(--teal);flex-shrink:0;margin-top:1px;}
+
+  /* Benefits grid */
+  .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:22px 0 6px;}
   .benefit-card{
-    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-    padding:20px;
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;
   }
   .benefit-card .b-icon{width:32px;height:32px;color:var(--amber-deep);margin-bottom:10px;}
   .benefit-card h4{margin:0 0 6px;font-size:15.5px;font-family:var(--serif);}
   .benefit-card p{margin:0;font-size:13.5px;color:var(--ink-soft);}
-  .note-small{
-    font-size:12.5px;color:var(--ink-soft);font-style:italic;margin-top:14px;
-  }
+  .note-small{font-size:12.5px;color:var(--ink-soft);font-style:italic;margin-top:14px;}
 
   /* FAQ accordion */
-  .faq-item{
-    border-bottom:1px solid var(--border);
-    padding:18px 0;
-  }
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0;}
   .faq-item summary{
-    cursor:pointer;font-weight:600;font-size:16px;
-    list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink);
+    cursor:pointer;font-weight:600;font-size:16px;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;color:var(--ink);
   }
   .faq-item summary::-webkit-details-marker{display:none;}
   .faq-item summary .plus{
@@ -244,39 +254,50 @@
   /* Final CTA */
   .final-cta{
     background: radial-gradient(circle at top left, #1E6F5C, #0F2E26 75%);
-    color:#fff;
-    text-align:center;
-    border-radius:22px;
-    padding:52px 26px;
-    margin:52px 0 40px;
+    color:#fff;text-align:center;border-radius:22px;padding:52px 26px;margin:52px 0 40px;
   }
   .final-cta h2{font-family:var(--serif);font-size:clamp(24px,4vw,32px);margin:0 0 14px;}
   .final-cta p{color:#CFE3DA;font-size:15.5px;max-width:520px;margin:0 auto 26px;}
 
   /* Footer */
-  footer{
-    background:#123028;
-    color:#B9CCC3;
-    padding:40px 20px 30px;
-    font-size:13px;
-  }
+  footer{background:#123028;color:#B9CCC3;padding:40px 20px 30px;font-size:13px;}
   .footer-links{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:18px;}
   .footer-links a{text-decoration:none;color:#DDEBE4;}
   .footer-links a:hover{text-decoration:underline;}
   .legal-note{color:#8FA79C;line-height:1.7;max-width:900px;}
 
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;background:var(--card);
+    border-top:1px solid var(--border);box-shadow:0 -4px 16px rgba(0,0,0,.08);
+    padding:10px 16px;display:none;align-items:center;justify-content:space-between;gap:12px;z-index:40;
+  }
+  .sticky-cta span{font-size:13px;font-weight:600;color:var(--ink);line-height:1.3;}
+  .sticky-cta .cta-btn{padding:11px 18px;font-size:13.5px;white-space:nowrap;}
+
   @media (max-width:640px){
     nav.categories{display:none;}
+    .article-body p{font-size:17.5px;}
     .side-section{grid-template-columns:1fr;}
     .side-section .icon-box{width:100px;}
     .nutrient-grid{grid-template-columns:1fr 1fr;}
-    .product-section{grid-template-columns:1fr;}
-    .product-visual{max-width:160px;margin:0 auto;}
+    .product-section{grid-template-columns:1fr;padding:30px 22px;}
+    .product-visual{max-width:200px;margin:0 auto;}
+    .check-grid{grid-template-columns:1fr;}
     .benefit-grid{grid-template-columns:1fr;}
+    .cta-btn{width:90%;text-align:center;}
+    .hero-cta .cta-btn{width:90%;}
+    .box-cta .cta-btn{width:90%;}
+    .product-section .cta-btn{width:100%;}
+    h2.section-title{margin:52px 0 16px;}
+    .pull-quote{padding:28px 20px;}
+    .sticky-cta{display:flex;}
+    body{padding-bottom:66px;}
   }
 </style>
 </head>
 <body>
+
+<div class="progress-bar" id="progressBar"></div>
 
 <div class="sponsor-banner">CONTEÚDO PATROCINADO — Publicidade sobre um produto de terceiros</div>
 
@@ -299,18 +320,21 @@
     <span>·</span>
     <span>Atualizado hoje</span>
     <span>·</span>
-    <span>4 min de leitura</span>
+    <span id="readTime">4 min de leitura</span>
     <span>·</span>
-    <span>Por Camila Ferreira, Redação de Saúde</span>
+    <span><span class="author-avatar">CF</span> Por Camila Ferreira, Redação de Saúde</span>
   </div>
 </header>
 
 <main class="wrap">
 
   <div class="article-head">
-    <div class="eyebrow">Sistema Nervoso</div>
-    <h1 class="headline">A descoberta que está chamando atenção de milhares de brasileiros com dores nervosas</h1>
-    <p class="subhead">Entenda por que o formigamento, a queimação e a rigidez nos pés e mãos aparecem — e como uma combinação específica de nutrientes tem sido estudada como suporte para quem convive com esse desconforto.</p>
+    <div class="eyebrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/></svg>
+      Sistema Nervoso
+    </div>
+    <h1 class="headline">O que pode estar por trás do formigamento, da queimação e da dormência nos pés e nas mãos? Especialistas explicam por que esses sintomas merecem atenção.</h1>
+    <p class="subhead">Muitas pessoas convivem diariamente com desconfortos como formigamento, rigidez e sensação de agulhadas sem entender o que pode estar causando esses sintomas. Conheça os fatores que podem estar envolvidos e por que alguns nutrientes têm sido estudados pelo seu papel na saúde do sistema nervoso.</p>
   </div>
 
   <figure class="hero-figure">
@@ -320,9 +344,17 @@
     <figcaption>Ilustração representando o desconforto nervoso e sua relação com o sistema nervoso periférico.</figcaption>
   </figure>
 
+  <div class="hero-cta">
+    <a href="https://saudenervopuremax.vercel.app" class="cta-btn">Conhecer a composição do NervoCure Max</a>
+  </div>
+
+  <hr class="divider">
+
   <div class="article-body">
-    <p class="lead">Você sente formigamento, queimação ou dormência nos pés e nas mãos? Aquelas sensações que lembram agulhadas e atrapalham o sono? Esse tipo de desconforto é mais comum do que parece, e afeta a rotina de milhares de pessoas no Brasil.</p>
-    <p>Esses sintomas não devem ser ignorados como um simples incômodo passageiro. Em muitos casos, eles estão relacionados a alterações nos nervos periféricos — e entender o que está por trás deles é o primeiro passo para buscar mais conforto no dia a dia.</p>
+    <p class="lead">Você já sentiu aquela sensação de formigamento, queimação ou dormência que aparece sem aviso e atrapalha tarefas simples do dia a dia?</p>
+    <p>Para algumas pessoas, esses episódios são ocasionais. Para outras, tornam-se frequentes e podem interferir no conforto ao caminhar, descansar ou realizar atividades rotineiras.</p>
+    <p>Embora existam diferentes causas possíveis para esses sintomas, especialistas destacam que eles não devem ser ignorados quando persistem. Compreender o que pode estar acontecendo é um passo importante para conversar com um profissional de saúde e conhecer estratégias que auxiliem no cuidado com o sistema nervoso.</p>
+    <p>Neste artigo, você vai entender por que esses desconfortos podem surgir, quais fatores têm sido estudados pela ciência e como alguns nutrientes vêm sendo investigados por seu papel na manutenção da saúde nervosa.</p>
   </div>
 
   <div class="highlight-box">
@@ -335,28 +367,70 @@
       <li>Uma nova perspectiva para quem convive com esse desconforto no dia a dia.</li>
     </ul>
   </div>
-
-  <h2 class="section-title">Por que isso acontece</h2>
-  <div class="side-section">
-    <div class="article-body">
-      <p>Imagine seus nervos como pequenos fios elétricos que transmitem mensagens por todo o corpo. Quando estão saudáveis, tudo funciona bem. Mas, com o tempo, fatores como idade, estilo de vida e certas condições de saúde podem afetar esse funcionamento, resultando em dor, formigamento e queimação — sintomas associados ao que a medicina chama de neuropatia periférica.</p>
-    </div>
-    <div class="icon-box">
-      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1E6F5C" stroke-width="1.6"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg>
-    </div>
+  <div class="box-cta">
+    <a href="https://saudenervopuremax.vercel.app" class="cta-btn">Conhecer mais sobre essa abordagem</a>
   </div>
 
-  <h2 class="section-title">O papel da inflamação</h2>
+  <h2 class="section-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg>
+    Por que isso acontece
+  </h2>
+  <div class="article-body">
+    <p>O sistema nervoso funciona como uma grande rede de comunicação do corpo. É por meio dele que sinais são enviados entre o cérebro, a medula espinhal e diferentes regiões do organismo.</p>
+    <p>Quando essa comunicação ocorre normalmente, movimentos, sensações e respostas do corpo acontecem de forma coordenada. Porém, diversos fatores — como o envelhecimento, algumas condições de saúde e deficiências nutricionais — podem afetar esse funcionamento.</p>
+    <p>Em alguns casos, essas alterações estão associadas ao aparecimento de sintomas como formigamento, dormência, sensação de queimação ou desconforto nas extremidades.</p>
+    <p>Os nervos periféricos, responsáveis por levar essas informações para braços, mãos, pernas e pés, têm sido amplamente estudados justamente por seu papel nesses sintomas.</p>
+  </div>
+
+  <figure class="comparison-figure">
+    <div class="comparison-visual">
+      <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+        <text x="150" y="26" text-anchor="middle" font-family="Work Sans" font-size="13" font-weight="600" fill="#1E6F5C">Nervo saudável</text>
+        <line x1="40" y1="70" x2="260" y2="70" stroke="#F3B77A" stroke-width="10" stroke-linecap="round"/>
+        <g fill="none" stroke="#1E6F5C" stroke-width="2.5">
+          <path d="M40 55 q10 -14 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0"/>
+          <path d="M40 85 q10 14 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0"/>
+        </g>
+        <text x="150" y="115" text-anchor="middle" font-family="Work Sans" font-size="11" fill="#4A5750">Bainha de mielina íntegra</text>
+
+        <text x="550" y="26" text-anchor="middle" font-family="Work Sans" font-size="13" font-weight="600" fill="#A6621E">Nervo com desgaste</text>
+        <line x1="440" y1="70" x2="660" y2="70" stroke="#D8CBAE" stroke-width="10" stroke-linecap="round" stroke-dasharray="14 8"/>
+        <g fill="none" stroke="#C97A2B" stroke-width="2.2" stroke-dasharray="5 4">
+          <path d="M440 58 q10 -10 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0"/>
+          <path d="M440 82 q10 10 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0"/>
+        </g>
+        <text x="550" y="115" text-anchor="middle" font-family="Work Sans" font-size="11" fill="#4A5750">Bainha de mielina comprometida</text>
+
+        <line x1="350" y1="20" x2="350" y2="140" stroke="#E1E7E2" stroke-width="1"/>
+      </svg>
+    </div>
+    <figcaption>Ilustração comparando um nervo saudável e um nervo com a bainha de mielina comprometida.</figcaption>
+  </figure>
+
+  <h2 class="section-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg>
+    O papel da inflamação
+  </h2>
   <div class="side-section">
     <div class="article-body">
-      <p>A inflamação crônica e o desgaste da bainha de mielina — a camada que protege os nervos — estão entre os fatores mais estudados nesse processo. É como o isolamento de um fio elétrico: quando se danifica, o sinal falha, e é aí que aparecem os sintomas. Fatores como o envelhecimento natural e certas deficiências nutricionais podem acelerar esse desgaste.</p>
+      <p>A <strong>inflamação crônica</strong> e o desgaste da <strong>bainha de mielina</strong> — a camada que protege os nervos — estão entre os fatores mais estudados nesse processo. É como o isolamento de um fio elétrico: quando se danifica, o sinal falha, e é aí que aparecem os sintomas. Fatores como o <strong>envelhecimento natural</strong> e certas <strong>deficiências nutricionais</strong> podem acelerar esse desgaste.</p>
     </div>
     <div class="icon-box">
       <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1E6F5C" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></svg>
     </div>
   </div>
+  <div class="gray-box">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 5v6m0 4h.01"/></svg>
+    <div>
+      <strong>O que é a bainha de mielina?</strong>
+      É a camada que envolve e protege os nervos, funcionando de forma parecida com o isolamento de um fio elétrico. Quando está íntegra, os impulsos nervosos são transmitidos de forma eficiente pelo corpo.
+    </div>
+  </div>
 
-  <h2 class="section-title">Nutrientes estudados para a saúde nervosa</h2>
+  <h2 class="section-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+    Nutrientes estudados para a saúde nervosa
+  </h2>
   <div class="article-body">
     <p>A ciência da nutrição tem se debruçado sobre alguns compostos com papel relevante na manutenção do sistema nervoso. Conheça os principais:</p>
   </div>
@@ -378,10 +452,19 @@
     </div>
   </div>
 
-  <h2 class="section-title">Como surgiu essa combinação</h2>
+  <div class="pull-quote">
+    <svg class="quote-icon" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" style="margin:0 auto 10px;"><path d="M7 7c-2.2 0-4 1.8-4 4v6h6v-6H6c0-1.1.9-2 2-2V7zm10 0c-2.2 0-4 1.8-4 4v6h6v-6h-3c0-1.1.9-2 2-2V7z"/></svg>
+    <p>Entender o que está por trás do desconforto nervoso é o primeiro passo para buscar mais qualidade de vida no dia a dia.</p>
+  </div>
+
+  <h2 class="section-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    Como surgiu essa combinação
+  </h2>
   <div class="story-block">
     <div class="article-body">
-      <p>A busca por formas de apoiar quem convive com desconforto nervoso levou pesquisadores e formuladores a explorar a sinergia entre nutrientes já conhecidos por seu papel na saúde neural. A ideia foi reunir, em uma única fórmula, ativos que juntos pudessem oferecer mais suporte do que isoladamente. Foi dessa combinação que nasceu o NervoCure Max.</p>
+      <p>Nos últimos anos, pesquisadores passaram a estudar com mais atenção o papel de determinados nutrientes na manutenção da saúde do sistema nervoso. Em vez de analisar apenas ingredientes isolados, diferentes estudos investigaram como combinações de compostos poderiam oferecer suporte nutricional de forma complementar.</p>
+      <p>Foi com base nessa linha de pesquisa que surgiu a proposta do NervoCure Max: reunir, em uma única fórmula, nutrientes amplamente estudados por sua participação no funcionamento normal do sistema nervoso e na proteção das células contra o estresse oxidativo.</p>
     </div>
   </div>
 
@@ -391,18 +474,36 @@
     </div>
     <div>
       <h3>NervoCure Max</h3>
-      <p>Suplemento alimentar em cápsulas, formulado para apoiar o bem-estar do sistema nervoso e ajudar a lidar com sensações como formigamento, queimação e rigidez.</p>
-      <ul>
-        <li>Fórmula com ativos de origem natural</li>
-        <li>Fabricado em conformidade com boas práticas de fabricação</li>
-        <li>Indicado para uso contínuo, conforme orientação na embalagem</li>
-        <li>Consulte um médico antes de usar, especialmente se tiver condições de saúde pré-existentes ou fizer uso de outros medicamentos</li>
-      </ul>
-      <a href="https://saudenervopuremax.vercel.app" class="cta-btn">Quero conhecer o NervoCure Max</a>
+      <p>Com base no conhecimento científico disponível sobre nutrientes relacionados à saúde do sistema nervoso, foi desenvolvido o NervoCure Max, um suplemento alimentar que reúne ingredientes selecionados para complementar a ingestão de nutrientes associados à manutenção da função nervosa.</p>
+      <p>Sua fórmula combina ativos reconhecidos por seu papel nutricional e é produzida seguindo boas práticas de fabricação.</p>
+      <p>Como qualquer suplemento alimentar, seu uso deve seguir as orientações da embalagem e, em caso de dúvidas ou condições de saúde preexistentes, é recomendável buscar orientação de um profissional de saúde.</p>
+      <a href="https://saudenervopuremax.vercel.app" class="cta-btn">Conhecer a composição completa do NervoCure Max</a>
     </div>
   </div>
 
-  <h2 class="section-title">O que os nutrientes dessa fórmula ajudam a apoiar</h2>
+  <div class="check-grid">
+    <div class="check-card">
+      <svg class="tick" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
+      Fórmula desenvolvida com ingredientes selecionados
+    </div>
+    <div class="check-card">
+      <svg class="tick" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
+      Produção seguindo boas práticas de fabricação
+    </div>
+    <div class="check-card">
+      <svg class="tick" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
+      Cápsulas práticas para o uso diário
+    </div>
+    <div class="check-card">
+      <svg class="tick" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>
+      Informações completas disponíveis na página oficial
+    </div>
+  </div>
+
+  <h2 class="section-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 4 12 12l-8-8M4 20l8-8 8 8"/></svg>
+    O que os nutrientes dessa fórmula ajudam a apoiar
+  </h2>
   <div class="benefit-grid">
     <div class="benefit-card">
       <svg class="b-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 4 12 12l-8-8M4 20l8-8 8 8"/></svg>
@@ -427,7 +528,14 @@
   </div>
   <p class="note-small">Resultados podem variar de pessoa para pessoa. Este produto não se destina a diagnosticar, tratar, curar ou prevenir nenhuma doença.</p>
 
-  <h2 class="section-title">Perguntas frequentes</h2>
+  <div class="hero-cta">
+    <a href="https://saudenervopuremax.vercel.app" class="cta-btn">Ver informações completas</a>
+  </div>
+
+  <h2 class="section-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 18h.01M9.09 9a3 3 0 1 1 5.82 1c0 2-3 2-3 4"/><circle cx="12" cy="12" r="9"/></svg>
+    Perguntas frequentes
+  </h2>
   <div class="faq-list">
     <details class="faq-item">
       <summary>O NervoCure Max é seguro? <span class="plus">+</span></summary>
@@ -445,12 +553,25 @@
       <summary>Pessoas com diabetes podem usar? <span class="plus">+</span></summary>
       <p>Pessoas com diabetes ou outras condições crônicas devem procurar orientação médica antes de iniciar o uso de qualquer suplemento alimentar.</p>
     </details>
+    <details class="faq-item">
+      <summary>Quem não deve utilizar o produto? <span class="plus">+</span></summary>
+      <p>Gestantes, lactantes, crianças e pessoas com alergia a algum dos componentes da fórmula não devem utilizar o produto sem orientação médica. Pessoas com condições de saúde pré-existentes também devem consultar um profissional antes do uso.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Como conservar corretamente? <span class="plus">+</span></summary>
+      <p>Mantenha o produto em local seco e fresco, ao abrigo da luz solar direta, e fora do alcance de crianças, conforme as instruções da embalagem.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Onde encontrar a versão oficial do produto? <span class="plus">+</span></summary>
+      <p>Para garantir a autenticidade e a qualidade do produto, a compra deve ser feita exclusivamente através da página oficial do fabricante, evitando canais não autorizados.</p>
+    </details>
   </div>
 
   <div class="final-cta">
-    <h2>Quer entender melhor como o NervoCure Max pode fazer parte da sua rotina?</h2>
-    <p>Conheça os detalhes completos, a composição e as condições especiais disponíveis diretamente na página oficial do fabricante.</p>
-    <a href="https://saudenervopuremax.vercel.app" class="cta-btn">Conhecer a página oficial</a>
+    <h2>Quer conhecer mais detalhes sobre o NervoCure Max?</h2>
+    <p>Na página oficial, você encontra informações completas sobre a composição, orientações de uso, recomendações importantes e demais detalhes para avaliar se o produto faz sentido para a sua rotina.</p>
+    <p style="color:#EAF3EF;font-size:14px;margin-bottom:24px;">Clique no botão abaixo para acessar as informações oficiais diretamente com o fabricante.</p>
+    <a href="https://saudenervopuremax.vercel.app" class="cta-btn">Acessar a página oficial</a>
   </div>
 
 </main>
@@ -470,6 +591,22 @@
     </p>
   </div>
 </footer>
+
+<div class="sticky-cta">
+  <span>Conheça o NervoCure&nbsp;Max</span>
+  <a href="https://saudenervopuremax.vercel.app" class="cta-btn">Ver agora</a>
+</div>
+
+<script>
+  var totalMinutes = 4;
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var p = h > 0 ? (window.scrollY / h) : 0;
+    document.getElementById('progressBar').style.width = (p * 100) + '%';
+    var remaining = Math.max(1, Math.ceil(totalMinutes * (1 - p)));
+    document.getElementById('readTime').textContent = remaining + ' min restantes de leitura';
+  });
+</script>
 
 </body>
 </html>
